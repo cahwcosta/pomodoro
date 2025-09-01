@@ -1,0 +1,49 @@
+@mixin mediaMaxWidth($type) {
+  @if type-of($type) == 'number' or str-index($type + '', 'px') {
+    @media (max-width: #{$type}) {
+      @content;
+    }
+  }
+
+  @else if $type == 'isMobileOrTabletVertical' {
+    @media (max-width: $desktop1280) and (orientation: portrait),
+           (max-width: $mobile),
+           (max-height: $mobile) {
+      @content;
+    }
+  } 
+  
+  @else if $type == 'ipadVertical' {
+    @media (max-width: $desktop1280) and (orientation: portrait) {
+      @content;
+    }
+  } 
+  
+  @else if $type == 'mobileVerticalHorizontal' {
+    @media (max-width: $mobile), (max-height: $mobile) {
+      @content;
+    }
+  } 
+  
+  @else if $type == 'mobileHorizontal' {
+    @media (max-height: $mobile) and (orientation: landscape) {
+      @content;
+    }
+  } 
+  
+  @else {
+    @warn "Valor de argumento '#{$type}' inválido em mediaMaxWidth.";
+  }
+}
+
+@mixin mediaMinAspectRatio($aspectRatio) {
+  @if type-of($aspectRatio) == 'number' {
+    @media (min-aspect-ratio: #{$aspectRatio}) {
+      @content;
+    }
+  }
+  
+  @else {
+    @warn "Valor de argumento '#{$aspectRatio}' inválido em mediaMaxWidth.";
+  }
+}
