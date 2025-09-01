@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import '@/styles/global.scss';
 import { type JSX } from 'react';
-import { silkscreen, courierPrime } from '@/styles/_fonts';
+import { pixelifySans } from '@/styles/_fonts';
 import { GSAPInitializer } from '@/components/atoms/gsap-initializer';
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ const RootLayout = ({
 }>): JSX.Element => {
   return (
     <html lang="pt-br">
-      <body className={`${silkscreen.variable} ${courierPrime.variable}`}>
+      <body className={pixelifySans.variable}>
         <GSAPInitializer />
         {children}
       </body>
