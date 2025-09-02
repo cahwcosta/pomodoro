@@ -4,6 +4,10 @@
   background-color: var(--color-green-light-moss);
   position: relative;
 
+  @include mediaMaxWidth($mobile) {
+    display: none;
+  }
+
   &:before, &:after {
     content: '';
     width: 1rem;

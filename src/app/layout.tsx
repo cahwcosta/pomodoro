@@ -5,7 +5,7 @@ import { pixelifySans } from '@/styles/_fonts';
 import { GSAPInitializer } from '@/components/atoms/gsap-initializer';
 
 export const metadata: Metadata = {
-  title: '',
+  title: 'Pomodoro',
   description: ''
 };
 
