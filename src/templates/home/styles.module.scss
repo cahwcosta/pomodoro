@@ -1,0 +1,34 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  width: 158.6rem;
+  height: 87.6rem;
+  border: 1rem solid var(--color-green-light-moss);
+  position: relative;
+
+  &:before, &:after {
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    display: block;
+    position: absolute;
+    background-color: var(--color-beige);
+  }
+
+  &:before {
+    bottom: -1rem;
+    left: -1rem;
+  }
+
+  &:after {
+    bottom: -1rem;
+    right: -1rem;
+  }
+}
